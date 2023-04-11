@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Watcher</title>
+    <style>
+      body {
+        margin-top: 0px;
+        font-size: 100px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .btn {
+        height: 100px;
+        width: 100px;
+        font-size: 50px;
+      }
+      .invis {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="size">100px</p>
+    <p>
+      <span id="one">a</span>
+      <span class="invis">oo</span>
+      <span id="two">a</span>
+      <span class="invis">oo</span>
+      <span id="three">a</span>
+      <span class="invis">oo</span>
+      <span id="four">a</span>
+      <span class="invis">oo</span>
+      <span id="five">a</span>
+    </p>
+    <button class="btn" onclick="decreaseFontSize()">-</button>
+    <button class="btn" onclick="increaseFontSize()">+</button>
+  </body>
+  <script>
+    const alphabet = [
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      'f',
+      'g',
+      'h',
+      'i',
+      'j',
+      'k',
+      'l',
+      'm',
+      'n',
+      'o',
+      'p',
+      'q',
+      'r',
+      's',
+      't',
+      'u',
+      'v',
+      'w',
+      'x',
+      'y',
+      'z',
+    ]
+    function decreaseFontSize() {
+      var currentSize = parseFloat(getComputedStyle(document.body).fontSize)
+      document.body.style.fontSize = currentSize - 2 + 'px'
+      let size = document.getElementById('size')
+      size.innerText = currentSize - 2 + 'px'
+      var marginSize = parseFloat(getComputedStyle(document.body).paddingTop)
+      document.body.style.paddingTop = (marginSize + 5) + 'px'
+      document.getElementById('one').innerText = alphabet[Math.floor(Math.random() * alphabet.length)];
+      document.getElementById('two').innerText = alphabet[Math.floor(Math.random() * alphabet.length)];
+      document.getElementById('three').innerText = alphabet[Math.floor(Math.random() * alphabet.length)];
+      document.getElementById('four').innerText = alphabet[Math.floor(Math.random() * alphabet.length)];
+      document.getElementById('five').innerText = alphabet[Math.floor(Math.random() * alphabet.length)];
+    }
+    function increaseFontSize() {
+      var currentSize = parseFloat(getComputedStyle(document.body).fontSize)
+      document.body.style.fontSize = currentSize + 2 + 'px'
+      let size = document.getElementById('size')
+      size.innerText = currentSize + 2 + 'px'
+      var marginSize = parseFloat(getComputedStyle(document.body).paddingTop)
+      document.body.style.paddingTop = (marginSize - 5) + 'px'
+      document.getElementById('one').innerText = alphabet[Math.floor(Math.random() * alphabet.length)];
+      document.getElementById('two').innerText = alphabet[Math.floor(Math.random() * alphabet.length)];
+      document.getElementById('three').innerText = alphabet[Math.floor(Math.random() * alphabet.length)];
+      document.getElementById('four').innerText = alphabet[Math.floor(Math.random() * alphabet.length)];
+      document.getElementById('five').innerText = alphabet[Math.floor(Math.random() * alphabet.length)];
+    }
+  </script>
+</html>
